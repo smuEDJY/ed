@@ -1,0 +1,17 @@
+
+public class HelloWorld{
+  public static void main(String[] args) {
+    System.out.println("Hello World"); 
+  }
+}
+
+패키지 없는 헬로우월드 (닥터자바)
+
+package com.sd;
+public class HelloWorld{
+  public static void main(String[] args) {
+    System.out.println("Hello World"); 
+  }
+}
+
+패키지 있는 헬로우 월드 (com -> sd폴더에 저장)

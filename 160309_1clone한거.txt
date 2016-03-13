@@ -1,0 +1,112 @@
+
+P400@G416-13 MINGW32 /
+$ cd ~
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd ked
+
+P400@G416-13 MINGW32 ~/ked (master)
+$ mkdir code
+
+P400@G416-13 MINGW32 ~/ked (master)
+$ cd code
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ git clone https://github.com/KangEunda/myrepo.git
+Cloning into 'myrepo'...
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+Checking connectivity... done.
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ cd myrepo/
+
+P400@G416-13 MINGW32 ~/ked/code/myrepo (master)
+$ ls -l
+total 1
+-rw-r--r-- 1 P400 197121 8 3월   9 16:20 README.md
+
+P400@G416-13 MINGW32 ~/ked/code/myrepo (master)
+$ ls -la
+total 6
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 ./
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 ../
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 .git/
+-rw-r--r-- 1 P400 197121 201 3월   9 16:20 .gitignore
+-rw-r--r-- 1 P400 197121   8 3월   9 16:20 README.md
+
+P400@G416-13 MINGW32 ~/ked/code/myrepo (master)
+$ ls -la
+total 6
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 ./
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 ../
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 .git/
+-rw-r--r-- 1 P400 197121 201 3월   9 16:20 .gitignore
+-rw-r--r-- 1 P400 197121   8 3월   9 16:20 README.md
+
+P400@G416-13 MINGW32 ~/ked/code/myrepo (master)
+$ pwd
+/c/Users/P400/ked/code/myrepo
+
+P400@G416-13 MINGW32 ~/ked/code/myrepo (master)
+$ cd ..
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ pwd
+/c/Users/P400/ked/code
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ ls -l
+total 0
+drwxr-xr-x 1 P400 197121 0 3월   9 16:20 myrepo/
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ mkdir j16
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ ls -l
+total 0
+drwxr-xr-x 1 P400 197121 0 3월   9 16:21 j16/
+drwxr-xr-x 1 P400 197121 0 3월   9 16:20 myrepo/
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ mv myrepo/ j16/
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ ls -l
+total 0
+drwxr-xr-x 1 P400 197121 0 3월   9 16:22 j16/
+
+P400@G416-13 MINGW32 ~/ked/code (master)
+$ cd j16
+
+P400@G416-13 MINGW32 ~/ked/code/j16 (master)
+$ ls -l
+total 0
+drwxr-xr-x 1 P400 197121 0 3월   9 16:20 myrepo/
+
+P400@G416-13 MINGW32 ~/ked/code/j16 (master)
+$ cd myrepo
+
+P400@G416-13 MINGW32 ~/ked/code/j16/myrepo (master)
+$ ls -la
+total 6
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 ./
+drwxr-xr-x 1 P400 197121   0 3월   9 16:22 ../
+drwxr-xr-x 1 P400 197121   0 3월   9 16:20 .git/
+-rw-r--r-- 1 P400 197121 201 3월   9 16:20 .gitignore
+-rw-r--r-- 1 P400 197121   8 3월   9 16:20 README.md
+
+P400@G416-13 MINGW32 ~/ked/code/j16/myrepo (master)
+$ ls -l
+total 1
+-rw-r--r-- 1 P400 197121 8 3월   9 16:20 README.md
+
+P400@G416-13 MINGW32 ~/ked/code/j16/myrepo (master)
+$ pwd
+/c/Users/P400/ked/code/j16/myrepo
+
+P400@G416-13 MINGW32 ~/ked/code/j16/myrepo (master)
+$
