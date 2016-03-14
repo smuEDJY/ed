@@ -1,0 +1,163 @@
+cd ~
+
+P400@G416-13 MINGW32 /
+$ cd ~
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd documents
+
+P400@G416-13 MINGW32 ~/documents (master)
+$ cd p400
+bash: cd: p400: No such file or directory
+
+P400@G416-13 MINGW32 ~/documents (master)
+$ cd users
+bash: cd: users: No such file or directory
+
+P400@G416-13 MINGW32 ~/documents (master)
+$ cd ~
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd user
+bash: cd: user: No such file or directory
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd users
+bash: cd: users: No such file or directory
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd documents
+
+P400@G416-13 MINGW32 ~/documents (master)
+$ cd ked
+
+P400@G416-13 MINGW32 ~/documents/ked (master)
+$ ls -la
+total 8
+drwxr-xr-x 1 P400 197121 0 3월   9 16:19 ./
+drwxr-xr-x 1 P400 197121 0 3월  14 16:06 ../
+drwxr-xr-x 1 P400 197121 0 3월   9 16:22 code/
+
+P400@G416-13 MINGW32 ~/documents/ked (master)
+$ cd j16
+bash: cd: j16: No such file or directory
+
+P400@G416-13 MINGW32 ~/documents/ked (master)
+$ cd code
+
+P400@G416-13 MINGW32 ~/documents/ked/code (master)
+$ cd j16
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16 (master)
+$ ls -la
+]total 4
+drwxr-xr-x 1 P400 197121 0 3월   9 16:22 ./
+drwxr-xr-x 1 P400 197121 0 3월   9 16:22 ../
+drwxr-xr-x 1 P400 197121 0 3월   9 16:50 myrepo/
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16 (master)
+$ ls -la
+total 4
+drwxr-xr-x 1 P400 197121 0 3월   9 16:22 ./
+drwxr-xr-x 1 P400 197121 0 3월   9 16:22 ../
+drwxr-xr-x 1 P400 197121 0 3월   9 16:50 myrepo/
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16 (master)
+$ cd myrepo
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -la
+total 22
+drwxr-xr-x 1 P400 197121     0 3월   9 16:50 ./
+drwxr-xr-x 1 P400 197121     0 3월   9 16:22 ../
+drwxr-xr-x 1 P400 197121     0 3월   9 17:57 .git/
+-rw-r--r-- 1 P400 197121   224 3월   9 16:47 .gitignore
+-rw-r--r-- 1 P400 197121 12288 3월   9 16:42 .gitignore.swp
+drwxr-xr-x 1 P400 197121     0 3월   9 17:32 classes/
+drwxr-xr-x 1 P400 197121     0 3월   9 16:29 doc/
+drwxr-xr-x 1 P400 197121     0 3월   9 17:42 lib/
+drwxr-xr-x 1 P400 197121     0 3월   9 16:29 model/
+-rw-r--r-- 1 P400 197121     8 3월   9 16:20 README.md
+drwxr-xr-x 1 P400 197121     0 3월   9 17:29 src/
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls lib
+aplu5.jar  drjava-stable-20140826-r5761.jar
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -l lib/
+total 13068
+-rw-r--r-- 1 P400 197121   450434 3월   9 17:41 aplu5.jar
+-rw-r--r-- 1 P400 197121 12928003 3월   9 16:47 drjava-stable-20140826-r5761.jar
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -l src/com/sd/turtle/
+total 2
+-rw-r--r-- 1 P400 197121 428 3월   9 17:45 HelloWorld.java
+-rw-r--r-- 1 P400 197121 428 3월   9 17:46 TurtleDemoMain.java
+
+
+-----------------------------------------------------------------------------------
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd documents/ked/code/j16
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16 (master)
+$ cd myrepo
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -l lib/
+total 13068
+-rw-r--r-- 1 P400 197121   450434 3월   9 17:41 aplu5.jar
+-rw-r--r-- 1 P400 197121 12928003 3월   9 16:47 drjava-stable-20140826-r5761.jar
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ mv ~/
+Display all 42 possibilities? (y or n)
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ java -jar lib/drjava-stable-20140826-r5761.jar &
+[1] 3768
+
+
+
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -l src/com/sd/turtle/WeightTurtle
+ls: cannot access src/com/sd/turtle/WeightTurtle: No such file or directory
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -l src/com/sd/turtle/WeightTurtle*
+-rw-r--r-- 1 P400 197121 380 3월  14 17:34 src/com/sd/turtle/WeightTurtle.java
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls -l ~/.drjava
+-rw-r--r-- 1 P400 197121 781 3월  14 17:46 /c/Users/P400/.drjava
+[1]+  Done                    java -jar lib/drjava-stable-20140826-r5761.jar
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ cat ~/.drjava
+#DrJava configuration file
+#Mon Mar 14 17:46:00 KST 2016
+extra.classpath = C:\\Users\\P400\\Documents\\ked\\code\\j16\\myrepo\\classes;C:
+font.main = Monospaced-15
+key.delete.next = [shift DELETE]
+key.delete.previous = [shift BACK_SPACE]
+recent.files = [C:\\Users\\P400\\Documents\\ked\\code\\j16\\myrepo\\src\\com\\sd
+window.height = 1056
+window.width = 1936
+window.x = -8
+window.y = -8
+window.state = 6
+doc.list.width = 151
+last.dir = C:\\Users\\P400\\Documents\\ked\\code\\j16\\myrepo\\src\\com\\sd\\tur
+last.interactions.dir = C:\\Users\\P400\\Documents\\ked\\code\\j16\\myrepo\\src
+tabbedpanes.state = 960 540 700 400
+new.version.notification.last = 1457510369907
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ java -jar lib/drjava-stable-20140826-r5761.jar &
+[1] 992

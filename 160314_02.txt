@@ -1,0 +1,44 @@
+upcasting downcasting 중요하다
+
+클래스 다이어그램 만들려고 한다
+
+다운받는거 옹래걸리니까 온라인으로 해보자
+www.planttext.com/planttext 이거 이용해서 해보자
+
+class Turtle 하고 refresh 누르면 옆에 그림 바껴
+첫째줄 클래스명 둘째줄 속성 셋째줄 함수들
+
+함수들 앞에 +는 퍼블릭 -는 프라이빗 #은   프로텍티드
+uml표기법이라 -int weight 라고 해도되는데 -weight:int로 주로 쓰더라
+
+이제 상속을 해보자 어떻게할까영
+사진찍었덩!!! 시프트랑 \ 같이 누르면 긴 바 생김
+
+우측 uml스크립트 저장하고 싶으면 ~~~ 에 .txt로 해
+유엠엘은 국제표준언어
+좌측은 생성엔진
+
+이젠 닥터자바 열어서 만들꺼 헤헤헤헤헤헤헤헤헤
+닥터자바는 lib에. ㅇㄴㄹ닐
+늘 타이핑 j16에서 한다
+
+& 안쓰면 먹어버린다.
+
+Weight Turtle을 만드는거야 
+class WeightTurtle {
+    -weight:int
+    +getWeight():int
+}
+이거 복붙 import 다음줄 부터
+
+
+
+javac -d classes -cp lib\aplu5.jar -sourcepath src src\com\sd\turtle\WeightTurtle.java
+이 한 줄은 거북이 나타내주는 줄 다음에 쓰는거야
+이게 컴파일이다
+
+이제 닥터자바로 불러오자
+
+Classpath를 잡아줘야되는데
+
+다운캐스팅 수동인데 올려주는 업캐스팅은 자동이야 ...... 이게 뭔말이야 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 상속은 필수적으로 알아야되고 
