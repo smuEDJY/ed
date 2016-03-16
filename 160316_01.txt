@@ -1,0 +1,113 @@
+mytext 문서를 저장하고 인코딩방식을 utp-8로 인코딩한다음
+
+ls lib/plantuml.jar
+java -jar lib/plantuml.jar model/mytext.txt라고 했는데 안되서 교수님이 나중에 알려주신다고 닥터자바를 켰다
+
+
+> import ch.aplu.turtle.*;
+
+> Turtle t1 = new Turtle();
+> t1.fd(100);
+> 
+이렇게 거북이 100만큼 나아간거 연습핸
+
+교수님 github에 들어가서 소스 다시 보면됩니당
+
+package com.sd.turtle;
+
+import java.awt.Color;
+import ch.aplu.turtle.*;
+
+public class WeightTurtle {
+  public static void main(String[] args) {
+    WeightTurtle wt = new WeightTurtle(10);
+까지 쓴다음 추가로 
+> import com.sd.turtle.WeightTurtle
+> WeightTurtle wt = new WeightTurtle(10); 
+
+그다음 
+wt.addStatusBar(30);
+    String msg = "Hello wight " + wt.getWeight() + "Kg.";
+      wt.setStatusText(msg)
+
+이것도 쓰고 또 콘솔창에 뭐라고 하면 뭐가 나와
+wt.addStatusBar(30);
+wt.getWeight();
+  10
+String msg = "Hello | weight" + wt.getWeight() + "kg,";
+msg
+  "Hello | weight 10 kg."
+wt.setStatusText(msg);
+Turtle tOFfwt=wt
+wt=(WeightTurtle)tOFfwt
+  Turtle(Position = (0,0) Headling = 0)
+
+강의의 목적은 객체지향 프로그래밍배우는거 디자인패턴....ㅎㅎ
+
+*표는 모든이라는 뜻
+
+
+상속 1.사용해도 좋은 경우
+     2. 상속하면 안되는 경우  십중팔구 연관을 써야함
+  |
+  ㅡ> 다형성
+설명할수있어야돼 뭘 설명해 정말 ㅠㅠ 진짜 집에갈때 뭘 떠올려야되는거야
+
+turtle 로 컴파일해 weightturtle이 들어와.....도 된다는거야]
+
+이제 디자인패턴을 설명해준대
+intro _dp
+예제부터 만들고 과제가 어떤거에요???????? solid원칙이 어떻게 적용되었는지 설명하는게 과제
+solid는 다섯가지의 줄임말이다앙
+2학년때부터는 설계부터 하고가는거 1학년때는 코딩했음
+
+duck 클래스 만들고인 오리 종류 다다르고 우는 방법도 달라
+인터페이스
+plantuml에서  점선은 인터페이스 구현
+실선은 센관계 점선은 약한관계 ㅎㅎㅎ 
+
+
+
+class Duck {
+    -flyBehavior:FlyBehavior
+    -quackBehavior:QuackBehavior
+    +swim()
+    +display()
+    +setFlyBehavior(FlyBehavior fb)
+    +setQuackBehavior(QuackBehavior qb)
+}
+
+
+이것부터 프로그래밍해보자@@@@
+코딩은 슈퍼클래스 보고 한다고
+
+
+콘솔창에 
+그 이후로 그대로 
+public void myPrint(Turtle t) {
+System.out.println("This is " + t);
+}
+창 뜨면 취소누르고
+myPrint(t1)
+   This is Turtle(Position = (0,100), Heading=0)
+myPrint(wt)
+   This is Turtle(Position = (0,0), Heading = 0)
+
+src 밑에 디렉토리가 패키지에 쓴거랑 일치해야돼 패키지는 디렉토리 잡는거니까
+
+implements 인터페이스를 상속받을때 쓴다.
+
+변동 되는 부분을 구분되는 부분이랑 분리시키려고!!!
+
+오리를 닥터자바에서 불러볼께~~~~~~~~~~
+콘솔창에 
+import jeadfirst.strategy.*
+md.swim()
+  All ducks float, even decoys!
+
+숙제 일이 삼사 다해바 다으월요일 올때까지 제출하지말자 근데 제출 하지마라 일요일 소스코드 자기꺼에 올려보기 
+
+온르 한거 완성해서 클래스다이어그램 그려보고 올리고 솔리드 원칙 설명해보고 인터랙션에서 한거 1-1,1-3하지말고 1-4를 오리로 하자 다 컴파일해봐
+
+올릴때 git status 빨간거 나와야돼
+

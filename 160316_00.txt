@@ -1,0 +1,111 @@
+P400@G416-13 MINGW32 /
+$ cd documents
+bash: cd: documents: No such file or directory
+
+P400@G416-13 MINGW32 /
+$ cd jsl
+bash: cd: jsl: No such file or directory
+
+P400@G416-13 MINGW32 /
+$ cd
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd ~
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd documents
+
+P400@G416-13 MINGW32 ~/documents (master)
+$ cd ked
+
+P400@G416-13 MINGW32 ~/documents/ked (master)
+$ cd jsl
+bash: cd: jsl: No such file or directory
+
+P400@G416-13 MINGW32 ~/documents/ked (master)
+$ cd code
+cd
+P400@G416-13 MINGW32 ~/documents/ked/code (master)
+$ cd j16/myrepo
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ cd model
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo/model (master)
+$ cd ..
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ pwd
+/c/Users/P400/documents/ked/code/j16/myrepo
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls model
+mytext.txt
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls model/
+mytext.txt
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ cat model/mytest.txt
+cat: model/mytest.txt: No such file or directory
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ cat model/mytext.txt
+@startuml
+class car
+class Driver
+Driver - Car
+@enduml
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ ls lib/plantuml.jar
+lib/plantuml.jar
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ java -jar lib/plantuml.jar model/mytext.txt
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ java -jar lib/drjava-stable-20140826-r5761.jar
+
+
+--------------------------------------------
+새로운 bash창
+
+P400@G416-13 MINGW32 /
+$ cd ~
+
+P400@G416-13 MINGW32 ~ (master)
+$ pwd
+/c/Users/P400
+
+P400@G416-13 MINGW32 ~ (master)
+$ javac -d classes/ -cp classes/\;lib/aplu5.jar -sourcepath src/ src/com/sd/turtle/weightTurtle.java
+javac: file not found: src\com\sd\turtle\weightTurtle.java
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+P400@G416-13 MINGW32 ~ (master)
+$ cd documents/ked/code/j16/myrepo
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ javac -d classes/ -cp classes/\;lib/aplu5.jar -sourcepath src/ src/com/sd/turtle/weightTurtle.java
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ javac -d classes/ -cp classes/\;lib/aplu5.jar -sourcepath src/ src/com/sd/turtle/weightTurtle*.java
+src\com\sd\turtle\WeightTurtleMain.java:6: error: class WeightTurtle is public, should be declared in a file named WeightTurtle.java
+public class WeightTurtle {
+       ^
+1 error
+
+P400@G416-13 MINGW32 ~/documents/ked/code/j16/myrepo (master)
+$ javac -d classes/ -cp classes/\;lib/aplu5.jar -sourcepath src/ src/com/sd/turtle/weightTurtle*.java
+src\com\sd\turtle\WeightTurtleMain.java:6: error: class WeightTurtle is public, should be declared in a file named WeightTurtle.java
+public class WeightTurtle {
+       ^
+1 error
+
+????????? 왜 에러뜨는지도 모르겠고 왜 거북이가 빨간색이 안되는지도 모르겠어 이제 알았어
+내가 weightturtle도 잘못썼는데 게다가 컴파일(javac -d classes/ -cp classes/\;lib/aplu5.jar -sourcepath src/ src/com/sd/turtle/weightTurtle*.java같이 ㅎㅎ)도 안했어 퓨ㅠㅠㅠ
+하고 나서 하니까 빨간 거북이가 똭!!!!!!!!!!!1
+헐 이거 다 수정하고 나니까 이제 에러도 안떠 WeightTurtle* 이부분 컴파일하는거 에러 안뜬다규!!!!
+
