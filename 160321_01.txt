@@ -1,0 +1,91 @@
+ocp  확장엔 열려있고 수정엔 닫혀있는것
+ocp원칙을 어떻게 쉽게 얘기할까 계층을 만들어주는것@!!@
+우리가 말하는 솔리드 원칙은 객체지향의 제일 큰 특징이라고 말했던 상속을 쓰면 대부분 그 원칙이 지켜짐
+
+격자모양이라고 말할게요 그림그려주셨다 (오리구조 ... ) 솔리드규칙이 대게 격자모양....ㅎ
+
+LSP 부모를 바꿔치기해도되는데 자식은 부모를 한정상속하는것 
+    프로그래밍에서 한정상속안된다  한정상속하는거면 lsp를 위반하는것
+
+out(19) 상속되있쟈나  
+
+A  ->  B
+
+에이는 비에 의존적이야 A depends B
+
+A  ->  ㅁ             ㅁ는 고정되어있어....  이런식으로 비를 화살표 바꾸면 역전원칙  ..? ㅣㅅ바?????
+       ^
+       ㅣ                                                                                              ㅁ - ㅁ
+       B                                                                                               ^^   ^^
+                                                                                                       ㅣ   ㅣ      <격자무늬>
+격자모양으로 프로그래밍을 한다.. 위는 안바뀌는 걸로 생각하면 돼                                        ㅁ   ㅁ
+프로그래밍 할때 위에있는걸 쓰는지 뭘 쓰는지 잘봐야돼(격자무늬에서) 고정되어잇는걸 써야 많이 안바뀜    
+
+응집성 딱 한가지의 목적을 실행하게한다 섞이면 안되니까  
+
+오늘은 두번째 사례할꺼다. 정렬하는 문제를 고민해보자   좀 어려울거같애 좀 어려워
+
+out[26] sorter라는것의 함수가 두개가 있어   
+고정/변동    ->     이 형식이야!!    ->  변동이 될것들은 변동되게 상속받고 고정할건 고정시키게 즉 격자무늬로 만들자
+
+
+SorterMainV1  comparable  인터페이스를 왜 분리해서 격자모양으로 고정되어잇는곳에 갖다놓을까?? 고치기 쉽게  
+                컴패어 하는게 분리해야 마땅한거야??  여러가지로 다르니까..   버전 0은 그걸 자기가 가지고있는거야 하나하나 다 고쳐줘야함
+				분리해야 더 효율적
+
+버전1
+java comparable검색해봤음    https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html
+compare(2)
+
+/인터페이스는 함수만 가지고 잇는것../
+ java.lang은 패키지...       method summury 보면 함수가 딱 하나있어  복붙
+
+버전2
+java comparator          https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html
+compare(1, 2)
+
+프로그램을 통으로 만드는건 버전0 바꿀때 다 바꿔야되서 짜증나자냐
+
+class IntegerComparator implements Comparator 함수 안에서
+<o1-o2  다운캐스팅 해줘야돼 수동이야    
+참고   :  integer 과 int는 달라>
+
+class StringComparator 일때는 string은 ㅇㅓ케???
+compare2 써야돼    
+o1.compareTo(o2); 안돼   다운캐스팅 해줘야돼 ->((String)o1).compareTo((String)o2)
+
+Object o1 = new String("abc");
+Object o2 = new String("def");  이 두개 비교해보자
+o1.compareTo(o2)
+스트링엔 있었지   compare에는 없쟈나~~
+(String)o1.compareTo((String)o2)
+어 근데 스트링도 안돼 왜 안돼??
+((String)o1).compareTo((String)o2)
+  -3   됐다
+
+class Sorter{
+  public Sorter() {}
+  public void sort(Object[] data, IntegerComparator comp) {}
+
+object 써주는건
+IntegerComparator 은 고정되어 이
+
+class Sorter{
+  public Sorter() {}
+  public void sort(Object[] data, Comparator comp) {}
+이렇게 써줘ㅗ야됌 왜 왜 ㅇ>ㅙㅗㅓㅇㄻ넝ㄻ내ㅑㅇㄹ???????
+
+array    arraylist 뭐가달라??
+array는 안늘어나 튜플같은거      
+내가 arry는 5개쓰겠다고 하면 5개밖에 몼슴 근데 arraylist는 5개쓴다고해도 10개써도돼
+
+
+SorterMainV2 컴파일해봐 시발 
+과제냈어
+
+디자인패턴
+중요 GoF가 뭐의 약자? Gang of Four
+Design patterns -> 이 책을 쓴사람
+
+
+
