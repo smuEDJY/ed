@@ -1,0 +1,68 @@
+class component를 적어주는ㄴ 이유는? 안적어주면 위에 두개 뜸 시퀀스 다이어그램을 만들어버림
+
+이렇게 넣는 대신에 Decorator가 뭐를 가지고 있어야돼? Component에 대해서 연관관계를 가져야함
+이 화살표가 하나는 상속(비어있는 알맹이) 근데 뾰족한건 많이 못봤을텐데 이게 나오면 거의 데코ㄹㅔ이터 패턴
+
+class Component{
+
+    getDescription()
+
+    cost()
+    }
+    
+
+class Decorator{
+
+    c:Component
+
+    abstract getDescription()
+    }
+    
+
+Component <|-- ConcreteComponent1
+
+Component <|-- ConcreteComponent2
+
+Component <|-- Decorator
+
+Decorator *--> Component
+
+Decorator <|-- ConceteDecorator
+
+
+client -> Beverage
+Beverage -> HouseBlend:new()
+이거는 Beverage b = new HouseBlend() 만든거
+(new child (new ch:b))
+생성자 안에 계속 넣어서 데코레이션 하는거!!
+window에서 많이 씀 out[13]
+
+
+오늘은 java.io
+
+인터랙션에 다 옮겨주면 실행된다 이것부터 해보자
+ㅈ프로그래밍 할때 자료구조랑 파일 을 먼저 알아야돼
+파일 배우고 난다음에는 db를 배움
+파일은 리더가 있고 스트림방식이있다 
+이미지 동영상 은 스트림방식
+문자는 리더 라이터를 사용 (github java.ioㅇㅔ 설명되어있음)
+
+java .io를 떠올리면 데코레이터를 써야함 그니까 데코레이터를 알아야돼 
+슈퍼클래스를 가져가야된단 말이야
+
+윈도우는 home디렉토리가 없으므로 ㅎㅎ  .은 현재위치를 뜻함
+세미콜론은 한 문장ㅇㅣ 끝났다는 얘긴데 인터랙션은 어차피 한문장식 해주니까 굳이 안써도됌
+
+java BufferReader oracle  생성자는 Reader 
+리더는 텍스트 파일을 읽는 추상클래스 계층은 제일 상위에 있음
+버퍼리더는 특이 시발 readLine()라ㅇ
+
+PrintWriter java oracle
+
+throw Exception 은 예외를 처리하는거 
+
+한글파일을 만들어서 readme를 하면 깨진대 왜 깨져 utf-8이 아니면 깨지는거야
+imputStreamReader 얘가 특이한 애  inputStream은 인코딩 방식을 바꿔주는 애 
+
+카라멜마끼아또랑 지금 한글 안깨지게 하는거랑
+새로운 데코레인터 하면 되는거지? 
