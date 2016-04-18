@@ -1,0 +1,88 @@
+design pattern.. 
+
+<planttext>
+
+class PizzaIngredientFactory
+PizzaIngredientFactory <|-- ChicagoPizza\nIngredientFac
+PizzaIngredientFactory <|-- NYPizza\nIngredientFac
+
+Interface Cheese
+Interface Dough
+
+Cheese <|.. MozzarellaCheese
+Cheese <|.. ReggianoCheese
+Dough <|.. ThickCrustDough
+Dough <|.. ThinCrustDough
+
+ChicagoPizza\nIngredientFac ..> Dough
+ChicagoPizza\nIngredientFac ..> Cheese
+NYPizza\nIngredientFac ..> Cheese
+NYPizza\nIngredientFac ..> Dough
+
+abstract class Pizza{
+  dough:Dough
+  cheese:Cheese
+  abstract void prepare()
+  void bake()
+  }
+class CheesePizza{
+  fac:PizzaIngredientFactory
+  CheesePizza(PizzaIngredientFactory)
+}
+Pizza <|-- CheesePizza
+
+abstract class PizzaStore {
+  #abstract pizza createPizza(String item)
+  +Pizza orderPizza(String type)
+}
+PizzaStore <|-- ChicagoPizzaStore
+ChicagoPizzaStore --> PizzaIngredientFactory
+
+
+
+
+family creator랑 product factory가 크리에이터!!
+product가 패밀리임  product family가 인터페이스를 통해서 제공  1:1
+dip   상속을 역전시켜주는거!!  ln[19]
+
+dough(object):Dough(type)
+cheese():Cheese(class)????타입이겠지?ㅇㅅㅇ
+
+pizza가 속성으로 도우랑 치즈가지는데 이걸 직접 쓰느게아니고 팩토리 통해서 쓴다
+클래스 치즈피자가 피자의 하위클래스로!
+치즈피자가 팩토리를 가지고있음
+
+치즈피자 생성자에 pizzaingredientfactory를 넘겨줘라
+
+protected#
+public +
+
+전에 했던거와 다른점은 아래에 치즈랑 도우 잇는데있자나 거기 그 패밀리 군이 들어온거 그게 다르다고하는거같애...
+
+
+
+abstract class DrawingAbstractFactory {
+  abstract getColor(String):Color
+  abstract getShape(String):Shape
+}
+  
+DrawingAbstractFactory <-- ColorFactory
+DrawingAbstractFactory <-- ShapeFactory
+
+interface Color
+Color <|.. Green
+Color <|.. Red
+
+interface Shape
+Shape <|.. Rectangle
+Shape <|.. Square
+ColorFactory ..> Color
+ShapeFactory ..> Shape
+
+
+복사해서 붙여넣기 귀찮다 왜냐면 다른 팩토리에 있눈뎅....
+import com.j1.w7
+
+
+
+
