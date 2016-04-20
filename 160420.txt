@@ -1,0 +1,86 @@
+singleton 을 배워보자
+사회에 나가면 많이 쓴다 
+만드는 패턴에 대해서 공부하고 있어용 new를 안쓰고 객체를 통해서 받아서 사용하는 패턴을 만들구있어
+
+만들려고 하는 객체가 바뀌거나 뉴를 쓸때 마다 수정해야되는 
+번거로윰이 있어서 이걸 없애보자가 factory 배운거
+
+객체지향에서 if문을 자꾸 없애려고 한다
+ 
+객체를 딱 하나만 띄우자 왜 딱 하나만 띄우려고할까? 
+프린트 할때 큐가 여러개 잇으면 안되자나.. 
+
+아무나 접근 하지 못하게 해야됨 만들때 개수를 확인해서 두번째는 있으면ㅇ 안만드는 로직이 잇어야되고
+만들어진 객체를 다른사람이 또 만들려고하면은 전
+만드는건 퍼블릭으로 만들어지만 누구나 어세스 못하게 만들어야해야되고
+다른 트레드에서 만든걸 공유할수 있어야됨.....
+
+class Client
+
+Client --> Barista1:order()
+Client --> Barista2:order() 성격급한 Client
+Client --> Barista3:order() 커피 세번 주문 하면 세번 돈 다내야되자나
+커피주문하는건 딱 한번만 한다는규칙이 있으면 커피를 3번 주문하게 해도 딱 한번만 실행이 된다.
+이게 바로 singleton 패턴 
+
+singleton객체를 생성하지 않고 겟인스턴스 함수를 써서 객체를 변환 받을수 있어야함
+그 객체를 쓸 수 잇는 방법으로 이거를 써야만 싱글턴의 목적을 달성할수있다
+static을 사용해야돼 정전기를 떠올리면됨 정 -> static  
+클래스에 정보를 남길때  static을 쓴다.
+ 객체를 생성하지 않고 불러서 쓸수있따.
+
+main 쓸때 static안쓰고 그냥 쓰자나 왜냐면 메인이 스테틱이라 안써도되는거야
+
+생성자 원래는 퍼블릭으로 만드는데 싱글턴에서 생성자를 퍼블릭으로 만들어도 될까? 
+아니요 private로 만들어  원래 돌려줄/때 객체를 돌려주는데 이 패턴에서는 못 돌려줌
+객체를 생성하는 유일한 방법은 + static getInstance():Singleton 
+-static instance:Singleton ->field 막아놓음
+
+singleton 자ㅏㅂ파일 라인마다 다 이유가 잇으니까 알아가면서 공부할것
+
+Singleton()이  private이기 때문에 new Singleton()이라고 반환할수 없다.
+numCalled 우리가 이해하라고 넣어준 변수임 
+객체가 하나 생길때마다(getInstance를 호출할때마다) numCalled가 증가함
+두번 호출하면 2되야되는데 2가 안됨
+numCalled를  static으로 지정하면 그 전에 호출되었던 값이 저장되므로 그 이후로 ++ 된다.. 즉 초기화 되지 않는다는 뜻!
+
+새로운 패턴 해보자
+private static Singleton uniqueInstance;
+private static Singleton uniqueInstance = new Singleton();  다른점은?
+
+<두가지 방식>-----------------------------------------------------
+package com.j1.w7;
+
+public class Singleton {
+  //private static Singleton uniqueInstance;
+  private static Singleton uniqueInstance = new Singleton();
+  private static int numCalled=0;
+  private Singleton() {}
+  public static Singleton getInstance(){
+   // if(uniqueInstance == null) {
+   //  uniqueInstance = new Singleton();
+   //}
+    numCalled++;
+    System.out.println("numCalled : " + numCalled);
+    return uniqueInstance;
+  }
+}
+
+package com.j1.w7;
+
+public class Singleton {
+  //private static Singleton uniqueInstance;
+  private static Singleton uniqueInstance = new Singleton();
+  private static int numCalled=0;
+  private Singleton() {}
+  public static synchronized Singleton getInstance(){
+    if(uniqueInstance == null) {
+     uniqueInstance = new Singleton();
+   }
+    numCalled++;
+    System.out.println("numCalled : " + numCalled);
+    return uniqueInstance;
+  }
+}  --> thread방식
+-------------------------------------------------------------------------
+
