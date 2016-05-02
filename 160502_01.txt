@@ -1,0 +1,29 @@
+command
+
+리모콘의 키에다가 가전제품을 연결시키는걸 먼저 해야됨
+
+invoker은 command패턴때문에 추가된거
+invoker은 리모콘의 역할 observer에서 명령어 등록하는 것처럼 그런 기능이 있어야함
+
+Client, command, invoker, receiver가 어떤 역할을 하는지 잘 알아둬야해요
+command 패턴 안쓰면(client랑 receiver만 사용) 함수이름이 각양각색이라 메뉴만 쓰는데 소스코드가 매번 몇십줄을 적어야함
+고치기도 너무 어렵구 ㅠㅠ
+
+garage :차고 ㅇㅅㅇ
+
+------------------------------------------------
+<ㅇㅏ직 command 패턴 안들어감>
+class Light{
+    +on():void
+    +off():void
+}
+
+class GarageDoor{
+    +up():void
+    +down():void
+}
+-----------------------------------------------
+execute의 argument가 비어있다
+execute가 켜지면 불이 켜져야돼
+
+return이 없으면 void로 한당??
