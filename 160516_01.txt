@@ -1,0 +1,17 @@
+hotdraw framework
+
+designpattern 책 필요합니다. ㅎㅎ
+
+실무할땐 uml 잘 안써요
+
+<Template>
+
+keyword = 절차(algorithm)
+절차가 묶여있다
+하위클래스가 절차를 어기면 안된다
+
+prepareRecipe 이 부분이 template를 가지고 있다.
+i.o는 decorator라고 생각하고 사용하기
+
+
+

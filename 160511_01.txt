@@ -1,0 +1,65 @@
+class Client
+Client --> c1
+Client --> c2
+Client --> c6
+에서
+
+Client -> Facade
+Facade --> c1
+Facade --> c2
+Facade --> c6
+
+facade가 client가 가지고 있는 짐을 덜어줌
+
+
+ import java.util.Arrays
+> String[] cities = {"seoul", "incheon","busan","sejong"}
+> cities
+{ seoul, incheon, busan, sejong }
+> cities.getClass()
+class [Ljava.lang.String;
+> import java.util.List
+> List cityList = Arrays.asList(cities)
+> cityList.getClass()
+class java.util.Arrays$ArrayList
+> import java.util.List
+> List cityList = Arrays.asList(cities)
+> cityList.getClass()
+class java.util.Arrays$ArrayList
+> cities.length
+4
+> cityList.size()
+4
+> cityList.set(0,"suwon")
+"seoul"
+> cityList
+[suwon, incheon, busan, sejong]
+> cities
+{ suwon, incheon, busan, sejong }
+> import java.util.ArrayList
+> ArrayList cityArrayList = new ArrayList()
+> cityArrayList = new ArrayList()
+[]
+> cityArrayList.getClass()
+class java.util.ArrayList
+> cityArrayList.addAll(Arrays.asList(cities))
+true
+> cityArrayList
+[suwon, incheon, busan, sejong]
+> cityArrayList.add("jeju")
+true
+> cityArrayList
+[suwon, incheon, busan, sejong, jeju]
+
+
+(생성자안에잇는거)까만 다이아몬드 검은양복입는 조폭   센관계(대부분 어레이관계)
+
+--->
+- - - >            field 관계
+
+
+tutorialspoint.com/design_pattern/data_access_object_pattern.htm
+
+dao pattern example 첫번째꺼
+
+
